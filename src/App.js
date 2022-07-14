@@ -35,7 +35,7 @@ function App() {
         </div>
         <button className='btn btn-success' onClick={() => setModalState(!modalState)}>Add a photo</button>
       </nav>
-      {modalState ? <Form setState={setModalState} state={modalState} close={closeModal} /> : ""}
+      {modalState ? <Form setState={setModalState} state={modalState} close={closeModal} fetchApi={fetchApi}/> : ""}
       <Card photos={photos} />
     </div>
   );

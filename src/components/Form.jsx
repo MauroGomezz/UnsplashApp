@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Form = ({state, setState, close}) => {
+const Form = ({state, setState, close, fetchApi}) => {
     const [nombre, setNombre] = useState();
     const [imagen, setImagen] = useState();
 
@@ -19,17 +19,20 @@ const Form = ({state, setState, close}) => {
 
     const enviarDatos = () => {
         let datosEnviar = {nombre,imagen};
-         fetch('http://localhost/empleados/?insertar=1', {
+         fetch('http://localhost/empleados/', {
                 method:"POST",
                 body:JSON.stringify(datosEnviar)
             })
-            .then(res => console.log(res));
+            .then(res => {
+                console.log(res)
+                fetchApi();
+            });
         }
 
   return (
     <div className='form-container' onClick={close}>
         <div className='card form-card'>
-            <form action="POST" className='card-body form' onSubmit={enviarDatos}>
+            <form className='card-body form' onSubmit={enviarDatos}>
                 <h3 className='fw-light'>Add a new photo</h3>
                 <div className="mb-3">
                     <label htmlFor="formGroupExampleInput" className="form-label">Tagline</label>

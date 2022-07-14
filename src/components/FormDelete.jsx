@@ -14,7 +14,7 @@ const FormDelete = ({state, setState, close, fetchApi, idImg}) => {
   return (
     <div className='form-container' onClick={close}>
         <div className='card form-card'>
-            <form action='/' className='card-body form' onSubmit={() => borrarRegistro(idImg)}>
+            <form className='card-body form' onSubmit={() => borrarRegistro(idImg)}>
                 <div className="mb-3">
                     <h3 className='fw-light'>Are you sure?</h3>
                 </div>

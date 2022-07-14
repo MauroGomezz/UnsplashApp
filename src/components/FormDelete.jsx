@@ -3,7 +3,7 @@ import React from 'react'
 const FormDelete = ({state, setState, close, fetchApi, idImg}) => {
 
     const borrarRegistro = (id) => {
-        fetch('http://localhost/empleados/?borrar='+id)
+        fetch('https://api-maurogomez.herokuapp.com/?borrar='+id)
         .then(res => {
           console.log(res)
           fetchApi();

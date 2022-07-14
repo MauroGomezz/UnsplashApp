@@ -9,7 +9,7 @@ function App() {
   const [photosList, setPhotosList]= useState([]);
 
   const fetchApi = async () => {
-      const temp = await fetch('http://localhost/empleados/')
+      const temp = await fetch('https://api-maurogomez.herokuapp.com/')
       .then(res => res.json());
       setPhotos(temp);
       setPhotosList(temp)

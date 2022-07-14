@@ -3,7 +3,7 @@ import React from 'react'
 const FormDelete = ({state, setState, close, fetchApi, idImg}) => {
 
     const borrarRegistro = (id) => {
-        fetch('https://api-maurogomez.herokuapp.com/?borrar='+id)
+        fetch('http://localhost/empleados/?borrar='+id)
         .then(res => {
           console.log(res)
           fetchApi();
@@ -14,7 +14,7 @@ const FormDelete = ({state, setState, close, fetchApi, idImg}) => {
   return (
     <div className='form-container' onClick={close}>
         <div className='card form-card'>
-            <form action="POST" className='card-body form' onSubmit={() => borrarRegistro(idImg)}>
+            <form className='card-body form' onSubmit={() => borrarRegistro(idImg)}>
                 <div className="mb-3">
                     <h3 className='fw-light'>Are you sure?</h3>
                 </div>

@@ -19,7 +19,7 @@ const Form = ({state, setState, close}) => {
 
     const enviarDatos = () => {
         let datosEnviar = {nombre,imagen};
-         fetch('https://api-maurogomez.herokuapp.com/?insertar', {
+         fetch('http://localhost/empleados/?insertar=1', {
                 method:"POST",
                 body:JSON.stringify(datosEnviar)
             })
